@@ -1,0 +1,33 @@
+/* 
+    Basic Settings 
+*/
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+/* 
+    Top Section
+*/
+
+.top-section {
+    background-color: green;
+}
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.fixture-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
