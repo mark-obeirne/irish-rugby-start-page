@@ -23,6 +23,41 @@ body {
 .search-wrapper {
     display: flex;
     justify-content: center;
+    padding: 2rem;
+}
+
+.search-bar {
+    background-color: rgb(0, 105, 70);
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+::placeholder {
+    color: #fff;
+    opacity: 1; /* Firefox-specific */
+}
+
+.search-bar:focus {
+    outline: none;
+    border-bottom: 2px solid #fff;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 1rem;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: #fff;
+    color: rgb(0, 105, 70);
+}
+
+.search-button:hover {
+    transform: scale(1.1);
 }
 
 .fixture-wrapper {
