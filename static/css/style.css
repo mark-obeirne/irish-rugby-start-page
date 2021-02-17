@@ -17,7 +17,7 @@ body {
 */
 
 .top-section {
-    background-color: green;
+    background-color: rgb(0, 105, 70); /* Colour code from https://encycolorpedia.com/teams/rugby-union/international/ireland */
 }
 
 .search-wrapper {
@@ -25,9 +25,34 @@ body {
     justify-content: center;
 }
 
-.fixture-section {
+.fixture-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30vh;
+    background: url(../img/ireland-aviva.jpg) no-repeat fixed 60% 105%;
+    background-color: rgba(0, 105, 70,0.9);
+    background-blend-mode:screen;
+}
+
+.fixture {
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    padding: 4rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+    width: 60%;
+}
+
+.fixture-teams {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.fixture-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
 }
