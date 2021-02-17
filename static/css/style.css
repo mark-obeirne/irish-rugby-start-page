@@ -67,7 +67,7 @@ body {
     height: 30vh;
     background: url(../img/ireland-aviva.jpg) no-repeat fixed 60% 105%;
     background-color: rgb(0, 105, 70);
-    background-blend-mode:screen;
+    background-blend-mode: soft-light;
 }
 
 .fixture {
