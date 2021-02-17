@@ -34,3 +34,30 @@ function setDateTime(info) {
     fullDate = `${day} ${monthsOfYear[month -1]}, ${year} | ${time}`;
     return fullDate;
 }
+
+
+// Selectors // 
+
+const searchBtn = document.querySelector(".search-button");
+
+
+// Functions //
+
+function searchTerm(e) {
+    const query = document.querySelector(".search-bar").value;
+    if (query) {
+        const domain = "https://www.google.com/search?q=";
+    const url = `${domain}${query}`;
+    window.open(url);
+    }
+}
+
+
+// Event Listeners //
+
+searchBtn.addEventListener("click", searchTerm)
+document.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        searchTerm(e);
+    }
+})
