@@ -69,7 +69,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    height: 45vh;
     background: url(../img/ireland-aviva.jpg) no-repeat fixed 63% 95%;
     background-color: rgb(0, 105, 70);
     background-blend-mode: soft-light;
@@ -123,9 +123,9 @@ body {
 .discussion-card {
     background: rgba(255,255,255,0.6);
     border-radius: 10px;
-    flex: 1 1 300px;
+    flex: 1 1 500px;
     margin: 2rem;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .card-header {
@@ -184,8 +184,6 @@ body {
 
 @media screen and (min-width: 952px) {
     .links-section {
-        height: 55vh;
-        justify-content: space-between;
-        align-items: center;
+        height: 62vh;
     }
 }
