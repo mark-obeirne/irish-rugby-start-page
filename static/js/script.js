@@ -15,6 +15,7 @@ fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
 
 
 function updateFixtureInfo(data) {
+    console.log(data);
     const homeTeam = document.querySelector(".home-team");
     const awayTeam = document.querySelector(".away-team");
     const dateTime = document.querySelector(".date");
@@ -24,6 +25,18 @@ function updateFixtureInfo(data) {
     awayTeam.textContent = data.away;
     dateTime.textContent = date;
     location.textContent = data.venue;
+    if (data.status !== "Not Started") {
+        addScore(data)
+    }
+}
+
+function addScore(matchInfo) {
+    const homeScore = document.querySelector(".home-score");
+    const awayScore = document.querySelector(".away-score");
+    homeScore.style.display = "inline-block"
+    awayScore.style.display = "inline-block"
+    homeScore.textContent = matchInfo.home_score;
+    awayScore.textContent = matchInfo.away_score;
 }
 
 function setDateTime(info) {
