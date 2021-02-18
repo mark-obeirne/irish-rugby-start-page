@@ -10,15 +10,16 @@ html {
 body {
     margin: 0;
     font-size: 1.6rem;
+    background-color: rgb(0, 105, 70); /* Colour code from https://encycolorpedia.com/teams/rugby-union/international/ireland */
 }
 
 /* 
-    Top Section
+    Search Bar
 */
 
-.top-section {
-    background-color: rgb(0, 105, 70); /* Colour code from https://encycolorpedia.com/teams/rugby-union/international/ireland */
-}
+/*.top-section {
+    background-color: rgb(0, 105, 70); 
+}*/
 
 .search-wrapper {
     display: flex;
@@ -60,12 +61,16 @@ body {
     transform: scale(1.1);
 }
 
+/*
+    Fixture Section
+*/
+
 .fixture-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
-    background: url(../img/ireland-aviva.jpg) no-repeat fixed 60% 105%;
+    height: 40vh;
+    background: url(../img/ireland-aviva.jpg) no-repeat fixed 63% 95%;
     background-color: rgb(0, 105, 70);
     background-blend-mode: soft-light;
 }
@@ -73,16 +78,22 @@ body {
 .fixture {
     background-color: rgba(0,0,0,0.5);
     color: white;
-    padding: 4rem;
+    padding: 2rem;
     font-weight: bold;
     font-size: 3rem;
     width: 60%;
+    border-radius: 5px;
 }
 
 .fixture-teams {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 1rem;
+}
+
+.fixture-teams span:nth-of-type(3) {
+    margin: .5rem;
 }
 
 .fixture-details {
@@ -90,4 +101,91 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: 1.4rem;
+}
+
+.home-score,
+.away-score {
+    display: none;
+}
+
+/*
+    Links Section
+*/
+
+.links-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.discussion-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 10px;
+    flex: 1 1 300px;
+    margin: 2rem;
+    max-width: 400px;
+}
+
+.card-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.discussion-card > h1 {
+    margin: 0;
+    padding: 2rem 0rem;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.discussion-card > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-list > li {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.card-list > li:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+/*
+    Media Queries
+*/
+
+@media screen and (min-width: 768px) {
+    .search-bar {
+        width: 30%;
+    }
+    
+    .fixture-wrapper {
+        height: 35vh;
+        background: url(../img/ireland-aviva.jpg) no-repeat fixed 60% 105%;
+        background-color: rgb(0, 105, 70);
+        background-blend-mode: soft-light;
+    }
+    
+    .fixture-teams {
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 1rem;
+    }
+
+    .fixture {
+        padding: 4rem;
+    }
+}
+
+@media screen and (min-width: 952px) {
+    .links-section {
+        height: 55vh;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
