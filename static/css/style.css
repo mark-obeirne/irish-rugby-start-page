@@ -55,6 +55,8 @@ body {
     border-radius: 50%;
     background: #fff;
     color: rgb(0, 105, 70);
+    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.2);
+    transition: all .75s;
 }
 
 .search-button:hover {
@@ -117,20 +119,27 @@ body {
     flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
-    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 600px;
+
 }
 
 .discussion-card {
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.7);
     border-radius: 10px;
-    flex: 1 1 500px;
+    flex: 1 1 275px;
     margin: 2rem;
-    max-width: 500px;
+    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.2);
 }
 
 .card-header {
     text-align: center;
-    text-transform: uppercase;
+    font-variant: small-caps;
 }
 
 .discussion-card > h1 {
@@ -149,10 +158,16 @@ body {
     padding: 1rem;
     border-bottom: 1px solid rgba(0,0,0,0.3);
     cursor: pointer;
+    font-size: 1.8rem;
+    display: flex;
 }
 
 .card-list > li:hover {
     background-color: rgba(255,255,255,0.3);
+}
+
+.card-list a {
+    flex-basis: 100%;
 }
 
 /*
@@ -165,7 +180,7 @@ body {
     }
     
     .fixture-wrapper {
-        height: 35vh;
+        height: 45vh;
         background: url(../img/ireland-aviva.jpg) no-repeat fixed 60% 105%;
         background-color: rgb(0, 105, 70);
         background-blend-mode: soft-light;
@@ -184,6 +199,6 @@ body {
 
 @media screen and (min-width: 952px) {
     .links-section {
-        height: 62vh;
+        height: 45vh;
     }
 }
