@@ -74,7 +74,7 @@ body {
     height: 45vh;
     background: url(../img/ireland-aviva.jpg) no-repeat fixed 63% 95%;
     background-color: rgb(0, 105, 70);
-    background-blend-mode: soft-light;
+    background-blend-mode: screen;
 }
 
 .fixture {
@@ -168,6 +168,8 @@ body {
 
 .card-list a {
     flex-basis: 100%;
+    text-decoration: none;
+    color: initial;
 }
 
 /*
