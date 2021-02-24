@@ -7,8 +7,20 @@ fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
 		"x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
 	}
 })
-.then(response => response.json())
-.then(data => updateFixtureInfo(data.results[0])) // Logs next upcoming fixture
+.then((response) => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error("Error encountered")
+    }
+})
+.then((data) => {
+    if (data.results[0]) {
+        updateFixtureInfo(data.results[0]) // Logs next upcoming fixture
+    } else {
+        console.log("No match scheduled")
+    }
+})
 .catch(err => {
 	console.error(err);
 });
