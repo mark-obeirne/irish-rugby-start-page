@@ -1,21 +1,33 @@
-
-// List fixtures by team
+// List fixtures by team - 1817 is Ireland
 fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
-	"method": "GET",
+	"method": "GET", 
 	"headers": {
 		"x-rapidapi-key": "8ce6c9e68emshb1f2c358ed2a7d4p1f5d78jsn5bbc0909ad0d",
 		"x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
 	}
 })
-.then(response => response.json())
-.then(data => updateFixtureInfo(data.results[0])) // Logs next upcoming fixture
+.then((response) => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error("Error encountered")
+    }
+})
+.then((data) => {
+    if (data.results) {
+        updateFixtureInfo(data.results[0]) // Logs next upcoming fixture
+    } else {
+        hideFixtureBox();
+        showClock();
+    }
+})
 .catch(err => {
-	console.error(err);
+    hideFixtureBox();
+    showClock();
 });
 
 
 function updateFixtureInfo(data) {
-    console.log(data);
     const homeTeam = document.querySelector(".home-team");
     const awayTeam = document.querySelector(".away-team");
     const dateTime = document.querySelector(".date");
@@ -48,6 +60,34 @@ function setDateTime(info) {
     return fullDate;
 }
 
+function hideFixtureBox() {
+    const fixture = document.querySelector(".fixture");
+    fixture.style.display = "none";
+}
+
+function getTime() {
+    const d = new Date();
+    let hours = d.getHours();
+    let mins = d.getMinutes();
+    let seconds = d.getSeconds();
+    if (hours < 10) {
+        hours = `0${hours}`;
+    };
+    if (mins < 10) {
+        mins = `0${mins}`;
+    }; 
+    if (seconds < 10) {
+        seconds = `0${seconds}`;
+    };  
+    const currentTime = document.querySelector(".current-time");
+    currentTime.innerHTML = `${hours}:${mins}:${seconds}`;
+}
+
+function showClock() {
+    const clockSpan = document.querySelector(".clock");
+    clockSpan.style.display = "flex";
+    clockSpan.style.justifyContent = "center";
+}
 
 // Selectors // 
 
@@ -74,3 +114,5 @@ document.addEventListener("keypress", function(e) {
         searchTerm(e);
     }
 })
+
+window.setInterval(getTime, 1000);

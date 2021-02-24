@@ -79,7 +79,8 @@ body {
     background-blend-mode: screen;
 }
 
-.fixture {
+.fixture,
+.clock {
     background-color: rgba(0,0,0,0.5);
     color: white;
     padding: 2rem;
@@ -87,6 +88,10 @@ body {
     font-size: 3rem;
     width: 60%;
     border-radius: 5px;
+}
+
+.clock {
+    display: none;
 }
 
 .fixture-teams {
