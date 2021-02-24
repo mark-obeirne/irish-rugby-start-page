@@ -1,7 +1,6 @@
-
-// List fixtures by team
+// List fixtures by team - 1817 is Ireland
 fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
-	"method": "GET",
+	"method": "GET", 
 	"headers": {
 		"x-rapidapi-key": "8ce6c9e68emshb1f2c358ed2a7d4p1f5d78jsn5bbc0909ad0d",
 		"x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
@@ -15,23 +14,20 @@ fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
     }
 })
 .then((data) => {
-    if (data.results[0]) {
+    if (data.results) {
         updateFixtureInfo(data.results[0]) // Logs next upcoming fixture
     } else {
-        console.log("No match scheduled");
         hideFixtureBox();
         showClock();
     }
 })
 .catch(err => {
-	console.error(err);
     hideFixtureBox();
     showClock();
 });
 
 
 function updateFixtureInfo(data) {
-    console.log(data);
     const homeTeam = document.querySelector(".home-team");
     const awayTeam = document.querySelector(".away-team");
     const dateTime = document.querySelector(".date");
@@ -85,7 +81,6 @@ function getTime() {
     };  
     const currentTime = document.querySelector(".current-time");
     currentTime.innerHTML = `${hours}:${mins}:${seconds}`;
-    console.log(currentTime.innerHTML);
 }
 
 function showClock() {
