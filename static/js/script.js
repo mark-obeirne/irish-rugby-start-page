@@ -18,11 +18,15 @@ fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
     if (data.results[0]) {
         updateFixtureInfo(data.results[0]) // Logs next upcoming fixture
     } else {
-        console.log("No match scheduled")
+        console.log("No match scheduled");
+        hideFixtureBox();
+        showClock();
     }
 })
 .catch(err => {
 	console.error(err);
+    hideFixtureBox();
+    showClock();
 });
 
 
@@ -60,6 +64,25 @@ function setDateTime(info) {
     return fullDate;
 }
 
+function hideFixtureBox() {
+    const fixture = document.querySelector(".fixture");
+    fixture.style.display = "none";
+}
+
+function showClock() {
+    const d = new Date();
+    const hours = d.getHours();
+    const mins = d.getMinutes();
+    const seconds = d.getSeconds();
+    const wrapper = document.querySelector(".fixture-wrapper");
+    const clockWrapper = document.createElement("div")
+    clockWrapper.classList.add("fixture");
+    clockWrapper.style.display = "flex";
+    clockWrapper.style.justifyContent = "center";
+    clockWrapper.innerHTML = "<span>" + hours + ":" + mins + ":" + seconds + "</span>";
+    wrapper.append(clockWrapper);
+    console.log(`${hours}:${mins}:${seconds}`);
+}
 
 // Selectors // 
 
