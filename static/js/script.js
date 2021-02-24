@@ -71,9 +71,9 @@ function hideFixtureBox() {
 
 function getTime() {
     const d = new Date();
-    const hours = d.getHours();
-    const mins = d.getMinutes();
-    const seconds = d.getSeconds();
+    let hours = d.getHours();
+    let mins = d.getMinutes();
+    let seconds = d.getSeconds();
     if (hours < 10) {
         hours = `0${hours}`;
     };
