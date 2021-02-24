@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
 /* 
     Basic Settings 
 */
@@ -11,6 +12,7 @@ body {
     margin: 0;
     font-size: 1.6rem;
     background-color: rgb(0, 105, 70); /* Colour code from https://encycolorpedia.com/teams/rugby-union/international/ireland */
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* 
@@ -74,7 +76,7 @@ body {
     height: 45vh;
     background: url(../img/ireland-aviva.jpg) no-repeat fixed 63% 95%;
     background-color: rgb(0, 105, 70);
-    background-blend-mode: soft-light;
+    background-blend-mode: screen;
 }
 
 .fixture {
@@ -103,6 +105,8 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: 1.4rem;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
 }
 
 .home-score,
@@ -140,6 +144,7 @@ body {
 .card-header {
     text-align: center;
     font-variant: small-caps;
+    font-family: 'Roboto', sans-serif;
 }
 
 .discussion-card > h1 {
@@ -168,6 +173,8 @@ body {
 
 .card-list a {
     flex-basis: 100%;
+    text-decoration: none;
+    color: initial;
 }
 
 /*
@@ -183,7 +190,7 @@ body {
         height: 45vh;
         background: url(../img/ireland-aviva.jpg) no-repeat fixed 60% 105%;
         background-color: rgb(0, 105, 70);
-        background-blend-mode: soft-light;
+        background-blend-mode: screen;
     }
     
     .fixture-teams {
