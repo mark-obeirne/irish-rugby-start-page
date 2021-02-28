@@ -2,7 +2,7 @@
 fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
 	"method": "GET", 
 	"headers": {
-		"x-rapidapi-key": "8ce6c9e68emshb1f2c358ed2a7d4p1f5d78jsn5bbc0909ad0d",
+		"x-rapidapi-key": "a7c9bde733mshfab15cef7338668p164f4djsnbbc60d7ce04b",
 		"x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
 	}
 })
