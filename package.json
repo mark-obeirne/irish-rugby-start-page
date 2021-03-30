@@ -1,0 +1,25 @@
+{
+  "name": "irish-rugby-start-page",
+  "version": "1.0.0",
+  "description": "A startpage for the Irish rugby fan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mark-obeirne/6nations-start-pages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mark-obeirne/6nations-start-pages/issues"
+  },
+  "homepage": "https://github.com/mark-obeirne/6nations-start-pages#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
