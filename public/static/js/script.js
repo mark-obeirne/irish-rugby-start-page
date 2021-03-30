@@ -1,31 +1,23 @@
-// List fixtures by team - 1817 is Ireland
-fetch("https://rugby-live-data.p.rapidapi.com/fixtures-by-team/1817", {
-	"method": "GET", 
-	"headers": {
-		"x-rapidapi-key": "8ce6c9e68emshb1f2c358ed2a7d4p1f5d78jsn5bbc0909ad0d",
-		"x-rapidapi-host": "rugby-live-data.p.rapidapi.com"
-	}
-})
-.then((response) => {
+// Send request to API via index.js fetch request
+(async function() {
+    const apiUrl = "getteaminfo";
+    const response = await fetch(apiUrl);
     if (response.ok) {
-        return response.json();
+        const data = await response.json();
+        if (data.results) {
+            if (data.results[0].away === "TBC" || data.results[0].home === "TBC") {
+                hideFixtureBox();
+                showClock();    
+            }
+            updateFixtureInfo(data.results[0]) // Logs next upcoming fixture
+        } else {
+            hideFixtureBox();
+            showClock();
+        }
     } else {
         throw new Error("Error encountered")
     }
-})
-.then((data) => {
-    if (data.results) {
-        updateFixtureInfo(data.results[0]) // Logs next upcoming fixture
-    } else {
-        hideFixtureBox();
-        showClock();
-    }
-})
-.catch(err => {
-    hideFixtureBox();
-    showClock();
-});
-
+})();
 
 function updateFixtureInfo(data) {
     const homeTeam = document.querySelector(".home-team");
